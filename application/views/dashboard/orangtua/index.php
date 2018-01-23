@@ -38,16 +38,23 @@
 				        	<?php foreach($data as $list) { ;?>
 				            <tr>
 				                <td><?php echo $list->nis;?></td>
-								<td><?php echo $list->nama_anak;?></td>
+								<td><?php echo $list->nama;?></td>
 				                <td><?php echo $list->nama_orangtua;?></td>
 				                <!--  <td><?php echo $list->alamat_rumah;?></td> -->
 				                <td><?php echo $list->telp;?></td>
 				                <td>
 				                	<div class="btn-group">
 				                	<a href="<?php echo site_url('orangtua/edit/').$list->id_orangtua;?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit"></span> edit</a>
+
+				                	<?php if($list->status==0) { ;?>
+				                		<a href="<?php echo site_url('orangtua/delete/').$list->id_orangtua.'/'.$list->nis;?>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span> hapus</a>
+				                	<?php };?>
+				                	<?php if($list->status==1) { ;?>
+				                		<a href="<?php echo site_url('orangtua/restore/').$list->id_orangtua.'/'.$list->nis;?>" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-repeat"></span> restore</a>
+				                	<?php };?>
 				                	<!-- <a href="<?php echo site_url('orangtua/detail/').$list->id_orangtua;?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-search"></span> detail</a> -->
 				                	<!-- <a target="_blank" href="<?php echo site_url('orangtua/pdf/').$list->id_orangtua;?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-print"></span> cetak</a> -->
-				                	<a href="<?php echo site_url('orangtua/delete/').$list->id_orangtua.'/'.$list->nis;?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span> hapus</a>
+				                	<!-- <a href="<?php echo site_url('orangtua/delete/').$list->id_orangtua.'/'.$list->nis;?>" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-trash"></span> hapus</a> -->
 				                	</div>
 				                </td>
 				            </tr>
