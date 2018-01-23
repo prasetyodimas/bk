@@ -24,7 +24,7 @@
 							<label for="input" class="col-sm-3 control-label text-danger">NIS</label>
 							<div class="col-sm-9">
 								<div class="input-group">
-									<input type="text" name="nis" class="form-control" id="nis" placeholder="Masukan NIS..">
+									<input type="text" name="nis" class="form-control" id="nis" placeholder="Masukan NIS.." value="<?php echo $list->nis;?>">
 									<span class="input-group-btn">
 										<button class="btn btn-primary" type="button" id="search">Cari </button>
 									</span>
@@ -34,7 +34,7 @@
 						<div class="form-group">
 							<label for="input" class="col-sm-3 control-label">Nama Anak</label>
 							<div class="col-sm-9">
-								<input type="text" name="nama_anak" class="form-control" id="nama">
+								<input type="text" name="nama_anak" class="form-control" id="nama" value="<?php echo $list->nama_anak; ?>">
 								<div style="display:none;">
 									<select name="id_student" class="form-control">
 										<!-- <option value='<?php echo $list->id_student;?>' selected></option> -->
